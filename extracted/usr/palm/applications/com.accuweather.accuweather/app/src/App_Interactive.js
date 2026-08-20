@@ -1,6 +1,19 @@
 var termsText = $LL("By using this application you agree to the AccuWeather.com Terms & Conditions (in English) which can be found on our web site at: <br><br> <a href='http://www.accuweather.com/m/EULA.aspx'>http://www.accuweather.com/m/EULA.aspx</a><br><br> and AccuWeather's Privacy Statement (in English) which can be found at:<br><br> <a href='http://www.accuweather.com/m/Legal/Privacy.aspx'>http://www.accuweather.com/m/Legal/Privacy.aspx</a>. <br><br>");
 var aboutText = $LL("AccuWeather, established in 1962, is the World's Weather Authority. <br><br>We provide local forecasts for everywhere in the United States and over two million locations worldwide. We also provide our products and services to more than 175,000 paying customers in media, business, government and institutions.<br><br>Our headquarters in State College, PA, is home to the greatest number of forecast meteorologists in one location anywhere in the world. <br><br>");
-var supportText = $LL('If you are experiencing technical difficulties, please send an email to:<br><br> alanmorford@gmail.com <br><br>with the subject "AccuWeather for HP Touchpad", or visit our support website at: <br><br> <a href="http://wireless.accuweather.com">http://wireless.accuweather.com</a>.<br><br>');
+// Not $LL()-wrapped, unlike termsText/aboutText above -- $LL() is a
+// translation-table LOOKUP keyed by the exact literal string passed in
+// (see Localization.js: __ac_stringPool[stringId]), not a passthrough.
+// Editing this string to swap the support email broke that exact-match
+// lookup against app/langs/*.js's still-unedited keys, silently returning
+// undefined and rendering the whole dialog body as blank text (confirmed
+// live: only this body vanished, not the "Support"/button labels, which
+// are separate, still-matching $LL() calls). Since this text is now
+// deliberately different from the original shipped/translated copy
+// anyway, assigning it directly sidesteps needing to update the matching
+// key AND value in all 6 (obfuscated, \uXXXX-escaped) locale files just to
+// keep the lookup working -- at the cost of this one string no longer
+// being localized (still English for every language).
+var supportText = 'If you are experiencing technical difficulties, please send an email to:<br><br> alanmorford@gmail.com <br><br>with the subject "AccuWeather for HP Touchpad", or visit our support website at: <br><br> <a href="http://wireless.accuweather.com">http://wireless.accuweather.com</a>.<br><br>';
 
 var DATA_REFRESH_INTERVAL = 1000*60*15; // 15 minutes
 
