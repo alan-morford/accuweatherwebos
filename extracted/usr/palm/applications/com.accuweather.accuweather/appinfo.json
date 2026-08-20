@@ -1,6 +1,6 @@
 {
 	"id": "com.accuweather.accuweather",
-	"version": "2.2.2",
+	"version": "2.3.0",
 	"vendor": "Game Lion Studios",
 	"type": "web",
 	"main": "index.html",
