@@ -1,0 +1,107 @@
+.accuweather-body {
+	background-color: black;
+	font: Helvetica;
+}
+
+.accuweather-commandtoolbar {
+	
+}
+
+.accuweather-frame {
+	position: relative;
+}
+
+.ads {
+	height: 96px;
+	padding: 3px 0px 3px 0px;
+}
+.accuweather-logobanner {
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#202020), to(#606060));    
+    border-style: solid;
+    border-width: 1px 0px;
+    border-color: rgb(160,160,160);
+}
+
+.accuweather-logobanner-image {
+    padding: 5px 0px 0px 0px;
+	margin: 0px;
+	width: 217px;
+	height: 18px;
+}
+
+.app-nointernetdlg-text {
+	font-size: 18px;
+	text-align: center;
+	color: black;
+}
+
+.app-nointernetdlg-title {
+	font-size: 26px;
+	color: red;
+}
+
+.app-nointernetdlg-image {
+	float: left;
+	width: 32px;
+	height: 32px;
+}
+
+
+
+
+.accuweather-commandtoolbar {
+	background-color: #000000;
+}
+
+.vertical-commandtoolbar {
+	height: 100%;
+	padding: 0px 5px 0px 5px;
+}
+
+.horizontal-commandtoolbar {
+	width: 100%;
+	padding: 5px 0px 5px 0px;
+}
+
+.commandtoolbar-button {
+	position: relative;
+	border-color: #333333;
+    border-style: solid;
+    border-width: 2px; 
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#606060), to(#202020));
+	padding: 10px;
+}
+
+.horizontalfirst {
+	border-top-left-radius: 12px;
+	border-bottom-left-radius: 12px;
+}
+
+.horizontallast {
+	border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.verticalfirst {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+}
+
+.verticallast {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.commandtoolbar-buttonimage {
+}
+
+.commandtoolbar-alertbuttonimage {
+    position: absolute;
+    right: 3px;
+    top: 3px;
+}
+
+.commandtoolbutton-selected {
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#5CADFF), to(#143D66));
+}
+

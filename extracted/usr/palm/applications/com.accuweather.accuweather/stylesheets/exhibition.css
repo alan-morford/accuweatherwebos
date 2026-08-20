@@ -1,0 +1,88 @@
+.exhibition {
+	background-color: black;
+}
+
+.exhibition-weatheranimation {
+	height: 50%;
+}
+
+.exhibition-bottom {
+    height: 50%;	
+}
+
+.exhibition-left {
+	width: 52%;
+}
+
+.exhibition-condition-image {
+	position: absolute;
+	width: 512px;
+	height: 512px;
+}
+
+.exhibition-forecast {
+	position: relative;
+	width: 48%;
+	padding: 0 40px 40px 40px;
+}
+
+.exhibition-cityname {
+	color: white;
+	font-size: 68px;
+	text-align: right;
+}
+
+.exhibition-temperature {
+	font-size: 68px;
+	color: white;
+	text-align: right;
+}
+
+.exhibition-updatetime {
+	font-size: 18px;
+    color: #555555;
+    text-align: right;
+}
+
+.exhibition-logobanner {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	width: 160px;
+	height: 16px;
+	opacity: .3;
+}
+
+.exhibition-forecast-dayrow {
+	position: relative;
+	height: 100px;
+}
+
+.exhibition-forecast-dayrow-middle {
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #444444;
+	border-top-style: solid;
+    border-top-width: 1px;
+    border-top-color: #444444;
+}
+
+.exhibition-forecast-dayrow-image {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+.exhibition-forecast-dayrow-name {
+	color: white;
+	text-align: right;
+	font-size: 24px;
+}
+
+.exhibition-forecast-dayrow-temp {
+	text-align: right;
+	color: #555555;
+	font-size: 28px;
+}

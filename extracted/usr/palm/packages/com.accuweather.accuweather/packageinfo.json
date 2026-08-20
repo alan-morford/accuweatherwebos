@@ -1,0 +1,9 @@
+{
+  "app": "com.accuweather.accuweather",
+  "icon": "app_icon.png",
+  "id": "com.accuweather.accuweather",
+  "loc_name": "AccuWeather",
+  "package_format_version": 2,
+  "vendor": "Game Lion Studios",
+  "version": "2.2.2"
+}

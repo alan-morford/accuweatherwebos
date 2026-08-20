@@ -1,0 +1,114 @@
+
+.current{
+	position: relative;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	color: #eeeeee;
+}
+
+.current-conditions-spacer {
+	min-width: 30px;
+}
+
+.current-conditions-weatheralert-button {
+    position: absolute;
+	bottom: 20px;
+	left: 20px;	
+}
+
+.current-weatheralerts-dialog {
+	width: 400px;
+}
+.current-conditions-rightpane {
+    padding: -15px 15px 0px 0px;	
+	margin: 0px;
+}
+
+.current-conditions-time {
+	color: #B0B0B0;
+    font-size: 15px;
+}
+
+.current-conditions-temperature {
+	padding: 0px;
+	margin: 0px;
+    font-size: 85px;
+	position: relative;
+	bottom: -10px;
+}
+
+.current-conditions-temperatureunit {
+    font-size: 60px;
+    padding-right: 15px;
+    margin: 0px;
+    position: relative;
+    bottom: -5px;
+}
+
+.current-conditions-weathertext {
+	font-size: 16px;
+	padding: 15px;
+}
+
+.current-conditions-temperatureunit-landscape {
+    font-size: 60px;
+    padding-right: 21px;
+    margin: 0px;
+    position: relative;
+    bottom: -5px;
+}
+
+.current-conditions-weathertext-landscape {
+	font-size: 16px;
+	padding: 21px;
+}
+
+
+.current-conditions-header {
+    border-bottom-style: solid;
+    border-bottom-color: rgb(160,160,160);
+    border-bottom-width: 1px;
+	background-color: transparent;
+}
+
+.current-conditions-datapane {
+    padding: 15px;
+}
+
+.current-conditions-datapane-landscape {
+    padding: 7px 21px 7px 21px; 
+}
+
+
+.current-conditions-datarow {
+	padding: 3px 0px 3px 0px;
+	position: relative;
+	left: -15px;
+}
+
+.current-conditions-datarow-landscape {
+    padding: 1px 0px 1px 0px;
+	position: relative;
+	left: -21px;
+}
+
+.current-conditions-datarow-right {
+	padding: 3px 0px 3px 0px;
+}
+
+.current-conditions-datarow-landscape-right {
+    padding: 1px 0px 1px 0px;
+}
+
+
+
+.current-conditions-label {
+    color: #B0B0B0;
+    font-size: 18px;
+}
+
+.current-conditions-value {
+    text-align: right;
+    color: white;
+    font-size: 18px;
+}

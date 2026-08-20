@@ -1,0 +1,42 @@
+.video-titletext {
+    color: white ;
+    font-size: 20px;
+	padding-left: 10px;
+}
+
+.video-descriptiontext {
+    color: rgb(200,200,200);
+    font-size: 14px;
+	padding-left: 10px;
+}
+
+.video-rowitem {
+    margin: 5px;
+	padding: 10px;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 7px;
+    border-style: hidden;
+	border-color: black;
+	border-width: 3px;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#101010));
+    min-height: 75px;
+}
+
+.video-rowitem-selected {
+	border-color: orange;
+	border-style: solid;
+}
+
+.video-header-banner {
+	font-size: 32px;
+}
+
+.news-gradientimage {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    z-index: 5;
+}

@@ -1,0 +1,86 @@
+.hourly-description {
+    color: rgb(200,200,200);
+    font-size: 22px;
+}
+
+.hourly-day {
+    color: white;
+    font-size: 26px;
+	font-style: bold;
+	margin-right: 10px;
+}
+
+.hourly-time {
+    color: white;
+    font-size: 26px;
+	font-weight: bold;
+}
+
+.hourly-temperature {
+    color: white;
+    font-size: 50px;
+}
+
+.hourly-temperature-suffix {
+    color: white;
+    font-size: 43px;
+}
+
+.hourly-data {
+    color: white;
+    font-size: 20px;
+}
+
+.hourly-title {
+	color: white;
+	font-size: 20px;
+}
+
+.hourly-row-item {
+    position: relative;
+	border-style: hidden;
+    margin: 5px;
+    padding: 0px 30px 0px 20px;
+    overflow: hidden;
+    background-color: black;
+    border-radius: 7px;
+    border-style: hidden;
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#101010));
+    height: 102px;
+}
+
+.hourly-rowitem-image {
+	position: relative;
+    width: 120px;
+    height: 120px;
+    top: -5px;
+    left: 0px;
+	padding-right: 25px;
+}
+
+.hourly-column-1 {
+	position: relative;
+	top: -10px;
+}
+
+.hourly-column-2 {
+	position: absolute;
+	top: 10px;
+	left: 58%;
+}
+
+.hourly-column-3 {
+	position: relative;
+	top: -10px;
+	width: 140px;
+	left: -13px;
+}
+
+.hourly-gradientimage {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    z-index: 5;
+}

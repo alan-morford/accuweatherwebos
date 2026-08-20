@@ -1,0 +1,7 @@
+{
+"returnValue": true,
+"results": [
+    {"metric": 0},
+	{"wind": 0},
+	{"pressure": 0}]
+}

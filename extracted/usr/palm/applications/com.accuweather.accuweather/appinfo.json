@@ -1,0 +1,53 @@
+{
+	"id": "com.accuweather.accuweather",
+	"version": "2.2.2",
+	"vendor": "Game Lion Studios",
+	"type": "web",
+	"main": "index.html",
+	"title": "AccuWeather",
+	"icon": "app_icon.png",
+	"dockMode": true,
+	"noWindow":true,
+	"uiRevision": 2,
+	
+	"keywords": [
+      "weather",
+      "forecast",
+      "rain",
+      "rainy",
+      "thunder",
+      "snow",
+      "ice",
+      "sun",
+      "sunny",
+      "cloud",
+      "cloudy",
+	  "radar",
+	  "satellite",
+	  "map",
+	  "temp",
+	  "temperature",
+	  "hurricane",
+	  "storm",
+	  "tornado",
+	  "wind",
+	  "humidity",
+	  "winter",
+	  "alerts", 
+	  "severe",
+	  "snow",
+	  "storm",
+	  "ice",
+	  "health",
+	  "travel",
+	  "outdoor"
+	],
+
+	"universalSearch" : {
+		"search": {
+		  "displayName"  : "AccuWeather Location Search",
+		  "url"          : "com.gamelion.accuweather",
+		  "launchParam"  : {"searchTerm": "#{searchTerms}"}
+		}
+	}
+}

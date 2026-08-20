@@ -1,0 +1,27 @@
+
+[SETUP]
+
+Steps to install:
+1) install the WebOS SDK - follow instructions at 
+   "SDK-PDK Download - HP webOS Developer Center.htm"
+   
+   note: the VirtualBox and CodeScorcery steps are only needed if you wish
+   to run the simulator or develop C/C++ applications respectively.
+
+2) if novacom device drivers fail to install (most often does),
+   install them manually for your system. novacom-win-64.tgz or novacom-win-32.tgz
+
+[HOW TO INSTALL A PACKAGE]
+1) attach a device using usb
+2) open command line and type: 
+      palm-install -r com.accuweather.accuweather
+      palm-install <path to package>.ipk
+
+
+[REFERENCES]
+palm packages (including webOS builds and novacom drivers):
+http://opensource.palm.com/packages.html (WARNING - broken novacom drivers)
+
+novacom drivers:
+http://downloads.help.palm.com/opensource/novacom/novacom-win-64.tgz
+http://downloads.help.palm.com/opensource/novacom/novacom-win-32.tgz

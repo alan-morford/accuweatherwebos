@@ -1,0 +1,37 @@
+.locationFrame {
+	position: relative;
+	left: -2px;
+	//width: 100%;
+}
+
+.location-locationbutton {
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#aeaeae), to(#242424));
+	border-style: solid;
+	border-width: 1px;
+	border-color: #808080;
+	border-radius: 7px;
+	height: 18px;
+	width: 18px;
+	padding: 1px;
+	position: absolute;
+	left: -27px;
+	top: 20px;
+}
+
+.location-locationbuttonimage {
+    margin: 0px 0px 0px -3px;
+}
+
+//.location-moveupbuttonimage {
+//    margin: 0;  
+//}
+
+//.location-movedownbuttonimage {
+//	margin: 2px 0 0 0;
+//}
+
+.location-locationtext {
+	color: white;
+	padding: 0px 25px 0px 0px;
+	font-size: 44px;
+}

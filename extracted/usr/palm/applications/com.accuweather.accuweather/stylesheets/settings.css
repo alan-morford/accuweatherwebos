@@ -1,0 +1,100 @@
+.settings {
+    background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#777777), to(#303030));
+    color: white;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	width: 100%;
+	height: 100%;
+}
+
+.settings-portrait {
+	padding-top: 40px;
+	padding-bottom: 60px;
+}
+
+.settings-addlocationbutton {
+    
+}
+
+.settings-gpssearchbutton {
+	
+}
+
+.settings-location-rowgroup {
+	width: 240px;
+}
+
+.settings-locationscolumn {
+	height: 100%;
+}
+
+.settings-unitscolumn {
+    width: 300px;
+	height: 100%;
+}
+
+.settings-morecolumn {
+	height: 100%;
+}
+
+.settings-locationitem {
+}
+
+.settings-unitsradio {
+	width: 100%;
+}
+
+.settings-divider {
+	width: 70%;
+	height: 1px;
+	padding: 0px;
+	background-color: white;
+	margin: 5px auto;
+}
+
+.settings-spacer {
+    width: 100%;
+    height: 40px;
+}
+
+.settings-advancedsettings {
+
+}
+
+.settings-advancedsettings-portrait {
+	padding-top: 20px;
+}
+.settings-headertext {
+	font-size: 22px;
+}
+
+.settings-unittitle {
+	font-size: 18px;
+	padding-top: 8px;
+}
+
+.settings-titletext-units {
+	font-size: 22px;
+}
+
+.settings-titletext-advanced {
+	font-size: 22px;
+	margin-bottom: 7px;
+}
+
+.settings-titletext {
+	font-size: 20px;
+	padding-top: 5px;
+}
+
+.settings-termsdialog {
+	width: 400px;
+}
+
+.settings-aboutdialog {
+	width: 400px;
+}
+
+.settings-supportdialog {
+	
+}

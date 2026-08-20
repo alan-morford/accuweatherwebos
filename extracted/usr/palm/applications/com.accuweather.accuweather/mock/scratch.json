@@ -1,0 +1,22 @@
+{
+"returnValue": true,
+"results": [
+    {"locations": [
+	    {
+	        "city": "New York",
+	        "state": "New York",
+	        "location": "cityId:349727"
+	    },
+	    {
+	        "city": "Paris",
+	        "state": "France (Île-De-France)",
+	        "location": "cityId:623"
+	    },
+		{
+            "city": "Bydgoszcz",
+            "state": "Poland (Kuyavian-Pomeranian)",
+            "location": "cityId:273875"
+		}
+	]},
+	{"currentLocationIndex": 0}]
+}

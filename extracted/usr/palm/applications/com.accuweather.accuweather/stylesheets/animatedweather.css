@@ -1,0 +1,114 @@
+.animatedweather {
+    background-repeat: no-repeat;
+	background-position: top left;	
+	background-image: url('../images/animated/sky.png');
+	overflow: hidden;
+}
+
+.animated-sun {
+    position: relative;	
+}
+
+.animated-cloudlayer {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.animated-cloud {
+    position: absolute;
+}
+
+.animated-drop {
+    position: absolute;
+    opacity: 0.75;
+    z-index: -1;
+}
+
+.animated-snowflake {
+    position: absolute;
+    opacity: 0.75;
+    z-index: -1;
+}
+
+.animated-snowflakeimage {
+    width: 15px;
+    height: 15px;
+}
+
+.animated-lightning-image {
+    position: absolute;
+	opacity: 0.7;	
+	z-index: -1;
+	width: 200px;
+	height: 280px;
+}
+
+.animated-icelayer {
+	width: 100%;
+	height: 100%;
+}
+
+.animated-leaflayer {
+	position: relative;
+    z-index: 5;
+	width: 100%;
+    height: 100%;
+}
+
+.animated-leaflayer-gradient {
+	position: absolute;
+	bottom: 0px;
+	z-index: 50;
+}
+
+.animated-leaf {
+    position: absolute;
+}
+
+.animated-leafimage {
+    width: 50px;
+    height: 50px;	
+}
+
+.animated-icicleImage {
+    position: absolute;
+}
+
+.animated-sparkle-image {
+	position: absolute;
+}
+
+.animated-glow-image {
+    position: absolute;
+	opacity: 0.50;
+}
+
+
+.animated-sunshinebaseimage {
+	z-index: 1;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.animated-sunshineupperimage {
+	z-index: 3;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.animated-sunrayimage {
+	z-index: 2;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity: 0.0;
+}
+
+.animated-cloudimage {
+	z-index: 4;
+	position: absolute;
+	opacity: 1.0;
+}

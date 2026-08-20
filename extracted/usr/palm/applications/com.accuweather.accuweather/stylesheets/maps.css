@@ -1,0 +1,152 @@
+.maps {
+
+}
+
+.radaroverlay-loading-spinner {
+    position: absolute;
+    top: 17px;
+    left: 152px;
+    z-index: 3;
+}
+
+.time-text {
+	position: absolute;
+	//width: 48px;
+	margin: 5px;
+	padding-left: 7px;
+	padding-right: 7px;
+	top: 52px;
+	left: 10px;
+	z-index: 3;
+	opacity: 1;
+	background-color: lightgrey;
+	border-color: black;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 1px;
+	color: black;
+	font-size: 16px;
+}
+
+.maps-buttongroup {
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	width: 140px;
+	z-index: 3;
+	opacity: 1;
+	padding: 2px;
+}
+
+.playpause-button {
+	position: relative;
+}
+
+.playpause-button-image {
+	position: absolute;
+    z-index: 3;
+	top: 4px;
+	left: 4px;
+}
+
+.playpause-button-image-pause {
+    left: 2px;
+}
+
+.options-button {
+	position: relative;
+}
+
+.fullscreen-button {
+	position: relative;
+	margin-left: 6px;
+}
+
+.fullscreen-button-image {
+    position: absolute;
+	z-index: 3;
+	top: 1px;
+	left: -1px;
+	width: 25px;
+	height: 25px;
+}
+
+.options-button-image {
+	position: absolute;
+    z-index: 3;
+    top: 1px;
+    left: -1px;
+    width: 25px;
+    height: 25px;
+}
+
+.settingsrowitem {
+	height: 50px;
+}
+
+.maps-optionsdialog {
+	width: 400px;
+}
+
+.maps-closebutton {
+}
+
+.maps-overlaytype-list {
+}
+
+.maps-opacity-slider {
+	width: 50%;
+	padding: 0px;
+}
+
+.maps-maplegend-toggle {
+}
+
+.maps-mapoptions-text {
+}
+
+.maps-map-canvas {
+	z-index: 2;
+	position: relative;
+	overflow: hidden;
+}
+
+/* Deliberately no CSS width/height rule for .maps-map-image -- Maps.js sets
+   real HTML width/height attributes on it directly (mirroring World Today's
+   WeatherView.js addMap()), and CSS sizing on a replaced element overrides
+   those attributes, silently undoing it. */
+
+.maps-radar-key {
+	position: absolute;
+	z-index: 3;
+	bottom: 20px;
+	right: 10px;
+	padding: 3px 5px 0px 3px;
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 3px;
+}
+
+.maps-radarkey-verticaltext {
+	height: 14px;
+    padding-top: 2px;
+	padding-right: 3px;
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+	text-align: right;
+}
+
+.maps-radarkey-cornerspacer {
+	width: 31px;
+}
+
+.maps-radarkey-horizontaltextgroup {
+	height: 14px;
+	width: 250px;
+}
+
+.maps-radarkey-horizontaltext {
+	color: white;
+	font-size: 12px;
+	font-weight: bold;
+}

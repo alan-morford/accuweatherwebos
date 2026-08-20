@@ -1,0 +1,53 @@
+.hurricane-map-canvas {
+	z-index: 2;
+}
+
+.hurricane-news-titletext {
+    color: white;
+    font-size: 16px;
+}
+
+.hurricane-news-descriptiontext {
+    color: black;
+    font-size: 10px;
+}
+
+.hurricane-news-rowitem {
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#404040), to(#B0B0B0));
+    border-radius: 7px;
+    margin: 5px;
+    border-style: hidden;
+}
+
+.hurricane-news-webview {
+	overflow: hidden;
+}
+
+.hurricane-video-titletext {
+    color: white;
+    font-size: 16px;
+}
+
+.hurricane-video-descriptiontext {
+    color: black;
+    font-size: 10px;
+}
+
+.hurricane-video-rowitem {
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#404040), to(#B0B0B0));
+    border-radius: 7px;
+    margin: 5px;
+    border-style: hidden;
+}
+
+.hurricane-radio-button {
+	font-size: 10px;
+}
+
+.hurricane-radiotab {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 3;
+	opacity: 1;
+}

@@ -1,0 +1,153 @@
+.news {
+    
+}
+
+.news-webview {
+	overflow: hidden;
+}
+
+.news-banner {
+    font-size: 32px;
+}
+
+.news-gradientimage {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 40px;
+    width: 100%;
+    z-index: 5;
+}
+
+.news-rowitem {
+	border-style: hidden;
+    margin: 1px;
+	padding: 10px;
+    overflow: hidden;
+    background-color: black;
+	border-radius: 7px;
+    border-style: hidden;
+	border-color: black;
+	border-width: 3px;
+	background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#555555), to(#101010));
+	min-height: 75px;
+}
+
+.news-rowitem-selected {
+    border-style: solid;
+	border-color: orange;
+}
+
+.news-titletext {
+    color: white ;
+    font-size: 20px;
+}
+
+.news-descriptiontext {
+    color: rgb(200,200,200);
+    font-size: 14px;
+}
+
+/* In-app article reading view (NewsArticle.js) -- same dark/orange palette
+   as the list above, not World Today's own article-view styling. */
+
+.newsarticle {
+    background-color: black;
+    position: relative; /* anchors .newsarticle-fullscreenimageoverlay */
+}
+
+.newsarticle-toolbar {
+    padding: 8px 10px;
+}
+
+.newsarticle-backbutton {
+}
+
+/* Padding lives on this wrapper, not the Scroller itself -- padding on
+   .newsarticle-scroller directly wasn't visibly taking effect on-device.
+   Left padding matches .newsarticle-toolbar's own 10px left padding (the
+   back button's left inset), so the button and the body text line up. */
+.newsarticle-scrollercontent {
+    padding: 0px 15px 20px 10px;
+}
+
+/* Fixed-size thumbnail floated top-right of the body text, cropped to fill
+   (background-size:cover) regardless of the source photo's own aspect
+   ratio -- a background-image div, not an <img>, so this doesn't depend on
+   this old WebKit's unreliable sizing of <img> as a replaced element. Tap
+   opens the full, uncropped view (onImageTap -> newsarticle-fullscreenimageoverlay). */
+.newsarticle-imagewrapper {
+    float: right;
+    width: 280px;
+    margin: 0px 0px 10px 12px;
+}
+
+.newsarticle-image {
+    width: 280px;
+    height: 280px;
+    background-size: cover;
+    background-position: center center;
+    background-color: rgb(40,40,40); /* placeholder while/if the photo fails to load */
+    border-radius: 7px;
+}
+
+.newsarticle-imagecaption {
+    color: rgb(160,160,160);
+    font-size: 11px;
+    margin-top: 4px;
+    text-align: right;
+}
+
+.newsarticle-title {
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.newsarticle-byline {
+    color: orange;
+    font-size: 14px;
+    margin-bottom: 12px;
+}
+
+.newsarticle-body {
+    color: rgb(220,220,220);
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+.newsarticle-body a {
+    color: orange;
+}
+
+.newsarticle-body img {
+    max-width: 100%;
+}
+
+/* Full-screen single-image viewer, shown/hidden in place over the whole
+   article view (see .newsarticle's position:relative above). */
+.newsarticle-fullscreenimageoverlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    background-color: black;
+    z-index: 20;
+}
+
+/* Deliberately no CSS width/height rule for .newsarticle-fullscreenimg --
+   Maps.js's radar image sets real HTML width/height attributes via JS
+   instead (resizeFullScreenImageToFit()), and a competing max-width/
+   max-height:100% rule here silently fought that (confirmed on-device: the
+   attributes computed correctly -- 960x540 -- but node.height read back as
+   0 with this rule in place). Same lesson as maps.css's .maps-map-image. */
+
+.newsarticle-fullscreencaption {
+    color: rgb(200,200,200);
+    font-size: 13px;
+    margin-top: 8px;
+    text-align: center;
+}
