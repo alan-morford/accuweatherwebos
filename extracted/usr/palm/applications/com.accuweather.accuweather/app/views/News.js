@@ -31,7 +31,10 @@ enyo.kind({
 					]}
 				]},
 				{name: "gradientImage", kind: "Image", src: "images/black_gradient.png", className:"news-gradientimage"},
-				{name: "scrim", kind: "Scrim", layoutKind: "VFlexLayout", align: "center", pack: "center", components: [ {kind: "SpinnerLarge", showing: true}] }
+				{name: "scrim", kind: "Scrim", layoutKind: "VFlexLayout", align: "center", pack: "center", components: [ {kind: "SpinnerLarge", showing: true}] },
+					{name: "emptyState", kind: "Control", layoutKind: "VFlexLayout", align: "center", pack: "center", className: "news-emptystate", showing: false, components: [
+						{content: "No news is good news, weather you like it or not!"}
+					]}
 			]},
 			{name: "article", kind: "AccuWeather.NewsArticle", onBack: "onArticleBack", onFullScreenToggle: "onArticleFullScreenToggle"}
 		]}
@@ -88,6 +91,7 @@ enyo.kind({
 		var state = local && local[AccuWeather_WeatherModel_Keys.state];
 		this._lastFetchedCity = city;
 		this.$.scrim.show();
+		this.$.emptyState.hide();
 		this.$.newsModel.startDownload(city, countryCode && countryCode.toLowerCase(), state);
 	},
 
@@ -110,6 +114,11 @@ enyo.kind({
 		if (++this.downloadsCount == 1) {
 			this.$.scrim.hide();
 			this.downloadsCount = 0;
+		}
+		if (this._newsArticles.length === 0) {
+			this.$.emptyState.show();
+		} else {
+			this.$.emptyState.hide();
 		}
 	},
 

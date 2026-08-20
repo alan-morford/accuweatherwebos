@@ -48,6 +48,24 @@
     font-size: 14px;
 }
 
+/* Absolutely positioned over the (empty) list area, the same way
+   .news-gradientimage and the framework's own Scrim overlay are -- as a
+   plain enyo.Control it has no such positioning of its own, and left in
+   normal VFlexBox flow it would add real height below the (still flex:1,
+   still full-size) empty Scroller instead of overlaying centered on top
+   of it. */
+.news-emptystate {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    padding: 0px 30px;
+    text-align: center;
+    color: rgb(200,200,200);
+    font-size: 20px;
+}
+
 /* In-app article reading view (NewsArticle.js) -- same dark/orange palette
    as the list above, not World Today's own article-view styling. */
 
