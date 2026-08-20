@@ -13,7 +13,7 @@ var aboutText = $LL("AccuWeather, established in 1962, is the World's Weather Au
 // key AND value in all 6 (obfuscated, \uXXXX-escaped) locale files just to
 // keep the lookup working -- at the cost of this one string no longer
 // being localized (still English for every language).
-var supportText = 'If you are experiencing technical difficulties, please send an email to:<br><br> alanmorford@gmail.com <br><br>with the subject "AccuWeather for HP Touchpad", or visit our support website at: <br><br> <a href="http://wireless.accuweather.com">http://wireless.accuweather.com</a>.<br><br>';
+var supportText = 'If you are experiencing technical difficulties, please send an email to:<br><br> alanmorford@gmail.com <br><br>with the subject "AccuWeather for HP Touchpad".<br><br>';
 
 var DATA_REFRESH_INTERVAL = 1000*60*15; // 15 minutes
 
