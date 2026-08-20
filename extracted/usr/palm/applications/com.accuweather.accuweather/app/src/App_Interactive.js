@@ -75,10 +75,9 @@ enyo.kind({
 		    	{name: "horizontalCommandToolbar", kind: "AccuWeather.CommandToolbar", showing: false, orientation: 0, selected: 0, onCommandSelected: "onCmdMenuClick", onRefreshSelected: "onRefreshButtonClick", onGPSSelected: "onGPSButtonClick" },
 	    	]}
         ]},
-		{
-            kind: "Helpers.Updater", //Make sure the Updater Helper is included in your depends.json
-            name: "myUpdater"
-        }
+		{name: "updateDialog", kind: "AccuWeather.UpdateDialog", onUpdateConfirmed: "downloadUpdate"},
+		{name: "updateCheck", kind: "WebService", url: "https://api.github.com/repos/alan-morford/accuweatherwebos/releases/latest", handleAs: "json", onSuccess: "onUpdateCheckSuccess", onFailure: "onUpdateCheckFail"},
+		{name: "openUpdateApp", kind: "PalmService", service: "palm://com.palm.applicationManager/", method: "open"},
     ],
 
 	published: {
@@ -96,8 +95,114 @@ enyo.kind({
     	this.log();
     	this.inherited(arguments);
     	this.redrawUI();
-		this.$.myUpdater.CheckForUpdate("AccuWeather%20for%20HP%20TouchPad");
+		this.checkForUpdate();
     },
+
+	// Runs once per app create() (this app has no separate "cold start vs.
+	// switched back into" lifecycle event the way World Today's ready() is
+	// scoped) -- checks this app's own GitHub repo (not the old App Museum
+	// II listing this app used to check, which was for the original
+	// unmodified commercial AccuWeather release, not this patched fork, so
+	// it could never actually surface a real update here) for a release
+	// newer than the installed appinfo.json version. Silent by design if
+	// the check fails (offline, GitHub API hiccup, or -- currently -- no
+	// releases published yet): a background hiccup shouldn't show an error
+	// or interrupt app launch, it just means no update popup this time.
+	checkForUpdate: function() {
+		this.$.updateCheck.call({});
+	},
+
+	onUpdateCheckFail: function() {},
+
+	onUpdateCheckSuccess: function(inSender, inResponse) {
+		if (!inResponse || !inResponse.tag_name) {
+			return;
+		}
+
+		var remoteVersion = inResponse.tag_name.replace(/^v/i, "");
+		var currentVersion = enyo.fetchAppInfo().version;
+		if (!this.isNewerVersion(remoteVersion, currentVersion)) {
+			return;
+		}
+
+		var ipkAsset = null;
+		var assets = inResponse.assets || [];
+		for (var i = 0; i < assets.length; i++) {
+			if (/\.ipk$/i.test(assets[i].name || "")) {
+				ipkAsset = assets[i];
+				break;
+			}
+		}
+		// No .ipk asset attached to the release (e.g. a docs-only tag) --
+		// nothing for "Update Now" to actually install, so don't prompt.
+		if (!ipkAsset) {
+			return;
+		}
+
+		this.pendingUpdateUrl = ipkAsset.browser_download_url;
+		this.$.updateDialog.showRelease(
+			"Version " + remoteVersion,
+			this.formatChangelog(inResponse.body || "")
+		);
+	},
+
+	// Numeric-segment compare so "1.10.0" correctly beats "1.9.0" -- a plain
+	// string compare would get that backwards.
+	isNewerVersion: function(remote, current) {
+		var r = String(remote).split(".");
+		var c = String(current).split(".");
+		var len = Math.max(r.length, c.length);
+		for (var i = 0; i < len; i++) {
+			var rv = parseInt(r[i], 10) || 0;
+			var cv = parseInt(c[i], 10) || 0;
+			if (rv > cv) return true;
+			if (rv < cv) return false;
+		}
+		return false;
+	},
+
+	// GitHub release bodies are GitHub-flavored markdown; this app has no
+	// markdown renderer, but allowHtml:true content controls are already
+	// used elsewhere (e.g. News tab articles), so a small, safe subset
+	// covers the plain "## heading" / "- bullet" / "**bold**" style release
+	// notes are actually written in.
+	formatChangelog: function(markdown) {
+		var html = String(markdown)
+			.replace(/&/g, "&amp;")
+			.replace(/</g, "&lt;")
+			.replace(/>/g, "&gt;");
+
+		html = html
+			.replace(/\r\n/g, "\n")
+			.replace(/^##+\s*(.*)$/gm, "<strong>$1</strong>")
+			.replace(/^-\s+(.*)$/gm, "&bull;&nbsp;$1")
+			.replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+			.replace(/\n/g, "<br>");
+
+		return html;
+	},
+
+	downloadUpdate: function() {
+		if (!this.pendingUpdateUrl) {
+			return;
+		}
+
+		// Hand the actual download+install off to Preware rather than the
+		// system browser -- contract confirmed working in the EMU7800
+		// TouchPad revival (see update.MD) and already used this same way
+		// by World Today: applicationManager "open" with type:"install"/
+		// file:<url> tells Preware to fetch and install that .ipk directly.
+		this.$.openUpdateApp.call({id: "org.webosinternals.preware", params: {type: "install", file: this.pendingUpdateUrl}});
+
+		// Preware is about to overwrite this app's own .ipk on disk, so it
+		// can't safely keep running. Give webOS a couple seconds to bring
+		// Preware to the foreground (same delay World Today/EMU7800 use),
+		// then close this app's own card so there's no stale running
+		// instance of the version about to be replaced.
+		setTimeout(function() {
+			window.close();
+		}, 2000);
+	},
     
     onWindowRotated: function(inSender) {
     	this.redrawUI();

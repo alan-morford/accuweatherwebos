@@ -43,7 +43,6 @@ enyo.depends(
   "app/src/AnimationFileCollections.js",
   "app/src/Css.js",
   "app/src/CommandToolbar.js",
-  "app/src/Updater-Helper.js",
   "app/views/Current.js",
   "app/views/Location.js",
   "app/views/Forecast.js",
@@ -62,6 +61,7 @@ enyo.depends(
   "app/views/AboutDialog.js",
   "app/views/SupportDialog.js",
   "app/views/TermsDialog.js",
+  "app/views/UpdateDialog.js",
 
   "stylesheets/accuweather.css",
   "stylesheets/current.css",

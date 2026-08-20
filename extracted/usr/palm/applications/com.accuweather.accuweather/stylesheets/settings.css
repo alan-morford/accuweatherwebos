@@ -95,6 +95,35 @@
 	width: 400px;
 }
 
+.settings-updatedialog {
+	width: 400px;
+}
+
+.update-versionlabel {
+	color: orange;
+	font-weight: bold;
+	padding: 0px 12px 8px 12px;
+}
+
+/* A real height, not max-height -- World Today's own UpdatePopup.js hit
+   this exact issue (confirmed live via palm-log): Enyo's touch-scroll
+   strategy holds content in an absolutely-positioned inner wrapper, which
+   contributes nothing to a plain auto-height parent's layout, so
+   max-height alone lets the scroller's own box collapse to just its
+   padding. */
+.update-changelogscroller {
+	height: 220px;
+}
+
+.update-changelogtext {
+	padding: 0px 12px 12px 12px;
+	font-size: 14px;
+}
+
+.update-buttonrow {
+	padding-bottom: 12px;
+}
+
 .settings-supportdialog {
 	
 }
