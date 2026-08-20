@@ -17,14 +17,18 @@ enyo.kind({
 
 	components: [
 		{name: "updateDialog", kind: "ModalDialog", className: "settings-updatedialog", components: [
-			{className: "enyo-item enyo-first", style: "padding: 12px", content: $LL("Update Available")},
-			{name: "versionLabel", className: "update-versionlabel"},
-			{kind: "enyo.Scroller", className: "update-changelogscroller", components: [
+			// "enyo-item enyo-first" is what draws the horizontal divider
+			// below this row on the other dialogs (About/Terms/Support) --
+			// giving the version line that same class (instead of the old
+			// separate, plain "Update Available" title row above it) is
+			// what puts the version above the divider instead of below it.
+			{name: "versionLabel", className: "enyo-item enyo-first update-versionlabel", style: "padding: 12px"},
+			{name: "changelogScroller", kind: "enyo.Scroller", className: "update-changelogscroller", components: [
 				{name: "changelog", className: "update-changelogtext", allowHtml: true}
 			]},
 			{kind: "HFlexBox", pack: "center", className: "update-buttonrow", components: [
-				{kind: "Button", caption: $LL("Later"), onclick: "onCancelClick"},
-				{kind: "Button", caption: $LL("Update Now"), className: "enyo-button-affirmative", onclick: "onUpdateClick"}
+				{kind: "Button", caption: $LL("Cancel"), onclick: "onCancelClick"},
+				{kind: "Button", caption: "Update", className: "enyo-button-affirmative", onclick: "onUpdateClick"}
 			]}
 		]},
 	],
@@ -33,6 +37,14 @@ enyo.kind({
 		this.inherited(arguments);
 	},
 
+	// Neither versionLabel nor the old title/button captions go through
+	// $LL() -- checked app/langs/en.js directly: "Update Available",
+	// "Later", and "Update Now" were never valid keys there (only "Cancel"
+	// is), so this dialog's title and both buttons have been rendering
+	// blank this whole time. Same class of bug as the Support dialog's
+	// blank body. "Update" (the affirmative button) isn't a valid key
+	// either, so it's assigned directly rather than repeating that mistake.
+	//
 	// Open before setContent, not after -- World Today's own UpdatePopup.js
 	// (a different, lazy-created Popup kind) hit "Cannot call method
 	// 'setContent' of undefined" the other way round, confirmed live. This
@@ -42,8 +54,23 @@ enyo.kind({
 	// following the already-proven-safe order rather than assuming.
 	showRelease: function(versionLabel, changelogHtml) {
 		this.$.updateDialog.openAtCenter();
-		this.$.versionLabel.setContent(versionLabel);
+		this.$.versionLabel.setContent("Update to " + versionLabel);
 		this.$.changelog.setContent(changelogHtml);
+
+		// The scroll-affordance bar (settings.css) only makes sense when
+		// there's actually something to scroll -- compare the changelog
+		// text's own rendered height (including its padding) against the
+		// scroller's fixed 220px viewport (settings.css's
+		// .update-changelogscroller) rather than hardcoding that number
+		// here too.
+		var contentNode = this.$.changelog.hasNode();
+		var scrollerNode = this.$.changelogScroller.hasNode();
+		var isScrollable = !!(contentNode && scrollerNode && contentNode.offsetHeight > scrollerNode.offsetHeight);
+		if (isScrollable) {
+			this.$.changelogScroller.addClass("update-changelogscroller-scrollable");
+		} else {
+			this.$.changelogScroller.removeClass("update-changelogscroller-scrollable");
+		}
 	},
 
 	onCancelClick: function() {
